@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    {% if not session.login %}
+        <p>Please login with your account to access this page!</p>
+        <div id="account-buttons">
+            <button id="signup-btn">Signup</button>
+            <button id="login-btn">Login</button>
+        </div>
+        <script defer>
+            const signupBtn = document.getElementById("signup-btn");
+            const loginBtn = document.getElementById("login-btn");
+            loginBtn.addEventListener("click", () => {
+                location.assign("/login");
+                console.log("login button clicked!");
+            });
+            signupBtn.addEventListener("click", () => {
+                location.assign("/signup");
+                console.log("signup button clicked!")
+            });
+        </script>
+        <style>
+            #account-buttons {
+                margin-top: 30px;
+            }
+
+            #signup-btn,
+            #login-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 15px;
+            }
+
+            #signup-btn:hover,
+            #login-btn:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    {% else %}
+        <h1>Dashboard</h1>
+        <div id="new-server">
+            <form method="POST" action = "/dashboard" enctype="multipart/form-data">
+                <input type="text" placeholder="Server name" name="server-name">
+                <input type="text" name="server-description" placeholder="Server description">
+                <div id="upload-btn-div">
+                    <input type="button" id="server-desc-img-upload" value="Upload Server Banner Image (.gif)" onclick="document.getElementById('file').click();" />
+                    <input type="file" id="file" name="fileUpload" accept="image/gif" style="display:none;">
+                </div>
+                <input type="text" name="address" placeholder="IP of your server">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <h1 id="your-servers-heading">Your Servers</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Server</th> <!-- Server Banner Image!-->
+                    <th>Players</th>
+                    <th>IP</th>
+                </tr>
+            </thead>
+            {% for server in servers %}
+            <tr>
+                <td>{{ server['Rank'] }}</td>
+                <td>{{ server['Name'] }}</td>
+                <td>{{ server['Server'] }}</td> <!-- Server Banner Image!-->
+                <td>{{ server['Players'] }}</td>
+                <td>{{ server['IP'] }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                }
+
+                #new-server input[type="button"]:hover {
+                    background-color: #2980b9;
+                }
+
+                #new-server input[type="button"] {
+                    background-color: #3498db;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                #upload-btn-div {
+                    margin-bottom: 16px;
+                }
+
+                th {
+                    background-color: #f2f2f2;
+                    color: #333;
+                }
+
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                tr:hover {
+                    background-color: #e0e0e0;
+                }
+            </style>
+    {% endif %}
+    <a href="/">Home</a>
+    <p>© WafflyOwl - 19th of August 2023. Trademarks are the property of their respective owners, all sites and servers are added by users.</p>
+    <p>NOT AN OFFICIAL MINECRAFT PRODUCT/SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</p>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+
+    a {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    #new-server {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #new-server form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #new-server input[type="file"],
+    #new-server input[type="text"],
+    #new-server input[type="number"] {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    #new-server input[type="submit"] {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #new-server input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+</style>
+</html>

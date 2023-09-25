@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nav {
+    padding: 10px;
+    text-align: right;
+}
+
+footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.account {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#div-1 {
+    text-align: center;
+    padding: 100px;
+    color: #333;
+    }
+
+#div-1 h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#div-1 p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#div-1 a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#div-1 a:hover {
+    text-decoration: underline;
+}
+
+#account-buttons {
+    margin-top: 30px;
+}
+
+#signup-btn,
+#login-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#signup-btn:hover,
+#login-btn:hover {
+    background-color: #2980b9;
+}
+
+h1 {
+    color: #333;
+}
+
+#logout-btn {
+    background-color: #710414;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#logout-btn:hover {
+    background-color: #941327;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    #div-1 {
+        padding: 10px;
+    }
+
+    #div-1 h1 {
+        font-size: 2em;
+    }
+
+    #div-1 p {
+        font-size: 1em;
+    }
+
+    #signup-btn,
+    #login-btn {
+        font-size: 0.9em;
+    }
+}
+
+#page-switcher {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-switcher button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+#page-switcher button:hover {
+    background-color: #2980b9;
+}
+
+#current-page {
+    margin: 0 15px;
+    font-size: 16px;
+    color: #333;
+}

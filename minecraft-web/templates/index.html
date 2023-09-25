@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/index.css">
+    <title>Home</title>
+</head>
+<body>
+    <div id="nav">
+        <button id="sponsored-btn" class="account">Sponsor</button>
+        <button id="account" class="account">Account</button>
+    </div>
+    <div id="div-1">
+        <h1>The best servers for Minecraft</h1>
+        <p>Find the perfect Minecraft Server for you!</p>
+        <p>Or <a href="dashboard">register your server</a>!</p>
+        {% if not session.login %}
+            <div id="account-buttons">
+                <button id="signup-btn">Signup</button>
+                <button id="login-btn">Login</button>
+            </div>
+        {% else %}
+            <button id="logout-btn">Log Out</button>
+        {% endif %}
+    </div>
+    <table id="server-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Server</th> <!-- Server Banner Image!-->
+                <th>Players</th>
+                <th>IP</th>
+            </tr>
+        </thead>
+        <tbody id="server-table-body">
+        </tbody>
+    </table>
+    <div id="page-switcher">
+        <button id="first-page">First</button>
+        <button id="prev-page">Previous</button>
+        <span id="current-page">Page 1</span>
+        <button id="next-page">Next</button>
+        <button id="last-page">Last</button>
+    </div>
+    <script src="static/index.js" defer></script>
+    <footer>
+       <p>© WafflyOwl - 19th of August 2023. Trademarks are the property of their respective owners, all sites and servers are added by users.</p>
+       <p>NOT AN OFFICIAL MINECRAFT PRODUCT/SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</p>
+    </footer>
+</body>
+</html>
