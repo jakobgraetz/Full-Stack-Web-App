@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Log In</h1>
+    <form method="POST" action = "/login">
+        <div id="login-container">
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" placeholder="you@example.com">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="your password">
+            <button type="submit" value="submit">Login</button>
+        </div>
+    </form>
+    <a href="signup">Don't have an account?</a>
+    <a href="/">Home</a>
+    <p>© WafflyOwl - 19th of August 2023. Trademarks are the property of their respective owners, all sites and servers are added by users.</p>
+    <p>NOT AN OFFICIAL MINECRAFT PRODUCT/SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</p>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    a {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    #login-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        
+    #login-container label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+        
+    #login-container input[type="email"],
+    #login-container input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+        
+    #login-container button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+        
+    #login-container button[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+</style>
+</html>
