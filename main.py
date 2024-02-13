@@ -26,7 +26,7 @@ def create_table():
     conn.close()
 
 
-# I do not know what I was thinking when creating two
+# I do not know what I was thinking when I created two
 # different databases, I guess I can't reliably program
 # when sleep deprived.
 def create_server_table():
