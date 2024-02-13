@@ -4,6 +4,7 @@ import sqlite3
 import requests
 import json
 
+# Initializes Flask app.
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
