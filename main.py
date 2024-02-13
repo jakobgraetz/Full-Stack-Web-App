@@ -172,6 +172,7 @@ def check_login(email, password):
     conn.close()
 
 
+# This could definitely be handled *a lot* smoother!
 def construct_new_server_dict(name, description, ip):
     players_endpoint = "https://eu.mc-api.net/v3/server/ping/" + ip
     try:
