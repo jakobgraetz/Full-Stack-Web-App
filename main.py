@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
+# SQLite table initialization.
 def create_table():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
@@ -25,6 +26,9 @@ def create_table():
     conn.close()
 
 
+# I do not know what I was thinking when creating two
+# different databases, I guess I can't reliably program
+# when sleep deprived.
 def create_server_table():
     conn = sqlite3.connect("servers.db")
     cursor = conn.cursor()
