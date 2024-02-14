@@ -148,7 +148,8 @@ def get_users():
     return users
 
 
-def get_user_id(email):
+# Returns the user id corresponding to the given email
+def get_user_id(email: str):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
 
