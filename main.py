@@ -197,6 +197,7 @@ def construct_new_server_dict(name, description, ip):
             print(f"Error: {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
+    # The server data, in form of a dict.
     server_dict = {
         "Rank": None,
         "Name": name,
