@@ -45,6 +45,7 @@ def create_server_table():
     conn.close()
 
 
+# Inserts the given server data into the DB.
 def insert_server(owner, server_data):
     conn = sqlite3.connect("servers.db")
     cursor = conn.cursor()
