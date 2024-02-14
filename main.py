@@ -122,7 +122,8 @@ def get_my_servers(user_id):
     return servers
 
 
-def is_email_in_db(email):
+# Checks if a given email is present in the database.
+def is_email_in_db(email: str):
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
 
