@@ -10,6 +10,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 # SQLite table initialization.
+# Should be handled in one *.db file!
 def create_table():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
@@ -26,10 +27,6 @@ def create_table():
     conn.close()
 
 
-# I do not know what I was thinking when I created two
-# different databases, I guess I can't reliably program
-# when sleep deprived.
-def create_server_table():
     conn = sqlite3.connect("servers.db")
     cursor = conn.cursor()
 
@@ -43,7 +40,6 @@ def create_server_table():
 
     conn.commit()
     conn.close()
-
 
 # Inserts the given server data into the DB.
 def insert_server(owner, server_data):
@@ -285,8 +281,7 @@ def logout():
     return redirect(url_for("index"))
 
 
-create_table()
-create_server_table()
+create_tables()
 
 get_servers()
 
