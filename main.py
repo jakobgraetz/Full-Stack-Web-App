@@ -11,7 +11,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # SQLite table initialization.
 # Should be handled in one *.db file!
-def create_table():
+def create_tables():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
     
