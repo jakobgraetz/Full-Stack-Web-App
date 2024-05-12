@@ -285,10 +285,78 @@ create_tables()
 
 get_servers()
 
+# HTTP error handlers:
+# 400 Bad Request error handler
+@app.errorhandler(400)
+def bad_request_error(error):
+    return "400 - Bad Request: Your request syntax is as messed up as a creeper explosion!"
+
+# 401 Unauthorized error handler
+@app.errorhandler(401)
+def unauthorized_error(error):
+    return "401 - Unauthorized: You need to login to access this area. Only players with diamond armor allowed!"
+
+# 403 Forbidden error handler
+@app.errorhandler(403)
+def forbidden_error(error):
+    return "403 - Forbidden: You don't have permission to access this area. The Ender Dragon guards it fiercely!"
+
+# 404 Not Found error handler
+@app.errorhandler(404)
+def not_found_error(error):
+    return "404 - Not Found: You stumbled upon a block that doesn't exist in this world!"
+
+# 405 Method Not Allowed error handler
+@app.errorhandler(405)
+def method_not_allowed_error(error):
+    return "405 - Method Not Allowed: That action isn't allowed in this realm. Check your inventory for alternative tools!"
+
+# 406 Not Acceptable error handler
+@app.errorhandler(406)
+def not_acceptable_error(error):
+    return "406 - Not Acceptable: The server can't generate a response that meets the requested characteristics. Like trying to craft dirt into diamonds!"
+
+# 408 Request Timeout error handler
+@app.errorhandler(408)
+def request_timeout_error(error):
+    return "408 - Request Timeout: The server timed out waiting for your request. Maybe you're lost in the Nether?"
+
+# 410 Gone error handler
+@app.errorhandler(410)
+def gone_error(error):
+    return "410 - Gone: That resource has been permanently removed from this world. Looks like it got deleted by Herobrine!"
+
+# 500 Internal Server Error handler
+@app.errorhandler(500)
+def internal_server_error(error):
+    return "500 - Internal Server Error: Redstone circuit malfunction! Unable to complete your request."
+
+# 501 Not Implemented error handler
+@app.errorhandler(501)
+def not_implemented_error(error):
+    return "501 - Not Implemented: The server doesn't support the functionality required to fulfill the request. Needs some enchantments!"
+
+# 502 Bad Gateway error handler
+@app.errorhandler(502)
+def bad_gateway_error(error):
+    return "502 - Bad Gateway: The server received an invalid response from the upstream server. Like trying to connect to the End from the Overworld!"
+
+# 503 Service Unavailable error handler
+@app.errorhandler(503)
+def service_unavailable_error(error):
+    return "503 - Service Unavailable: The server is currently unable to handle the request due to maintenance or overload. The Ender Dragon is wreaking havoc!"
+
+# 504 Gateway Timeout error handler
+@app.errorhandler(504)
+def gateway_timeout_error(error):
+    return "504 - Gateway Timeout: The server didn't receive a timely response from the upstream server. Looks like the End Portal is closed!"
+
+# Custom error handler for other errors
+@app.errorhandler(Exception)
+def handle_error(error):
+    return "500 - Internal Server Error: An unexpected glitch occurred. Steve is investigating!"
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)
-
-
-# TODO: ERROR HANDLERS!
 
 # TODO: REMOVE UNNECESSARY PRINTS!
